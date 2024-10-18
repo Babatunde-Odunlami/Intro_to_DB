@@ -12,7 +12,7 @@ mycursor = mydb.cursor()
 
 
 # Specify what database to use going forward
-mycursor.execute("USE alx_book_store")
+mycursor.execute("USE alx_book_store;")
 
 try:
     # Create a table named `customers` (if it doesn't exist)
