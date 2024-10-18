@@ -17,7 +17,7 @@ try:
         """
         )
     print("Database 'alx_book_store' created successfully!")
-except sql.Error as e:
+except mysql.connector.Error as e:
     if e.errno == sql.errorcode.ER_DB_CREATE_EXISTS:
         print(f"Database 'alx_book_store' already exists."
     else:
