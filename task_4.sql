@@ -1,5 +1,6 @@
-Iimport mysql.connector as sql
+import mysql.connector as sql
 from mysql.connector import Error
+#INFORMATION_SCHEMA.COLUMNS", "COLUMN_NAME", "COLUMN_TYPE", "TABLE_SCHEMA = 'alx_book_store'", "TABLE_NAME = 'Books
 
 # Database connection details (replace with your own)
 mydb = mysql.connector.connect(
@@ -20,11 +21,11 @@ try:
     # Create a table named `customers` (if it doesn't exist)
     mycursor.execute(
         """
-        SELECT * 
+        SELECT INFORMATION_SCHEMA.COLUMNS, COLUMN_NAME,COLUMN_TYPE 
         FROM information_schema.COLUMNS
         WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s
         """,
-        (database_name, table_name),
+        ("alx_book_store", "Books"),
     )
     result = mycursor.fetchall()
 
