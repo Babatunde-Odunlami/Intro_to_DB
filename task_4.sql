@@ -25,7 +25,7 @@ try:
         FROM information_schema.COLUMNS
         WHERE TABLE_SCHEMA = %s AND TABLE_NAME = %s
         """,
-        ("alx_book_store", "Books"),
+        ("alx_book_store", TABLE_NAME = 'Books'),
     )
     result = mycursor.fetchall()
 
