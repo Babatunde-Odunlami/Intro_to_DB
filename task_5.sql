@@ -5,7 +5,16 @@ mydb =mysql.connector.connect(host="localhost",user="root",password="Temitope@20
 mycursor =mydb.cursor()
 mycursor.execute("USE alx_book_store;")
 
-#INSERT INTO Customer
+try:
+	mycursor.execute(
+        """
+        INSERT INTO customer(customer_id, customer_name, email, address)
+        VALUES(1, "Cole Baidoo", "cbaidoo@sandtech.com","123 Happiness Ave.")
+        """)
+except mysql.connector.Error:
+	pass
+
+
 try:
     # Create a table named `customers` (if it doesn't exist)
     mycursor.execute(
